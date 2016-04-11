@@ -22,7 +22,7 @@ public class Main {
 		// TODO Auto-generated method stub
 		Device device=new Device("NameDevice",100);
 		PC pc=new PC("NamePC",500);
-		pc.setRam(1001);
+		pc.setRam(1000);
 		Device tv=new TV("NameTV",500);
 		Device player=new Player("Name1",0);
 		PC laptop=new Laptop("NameLaptop");

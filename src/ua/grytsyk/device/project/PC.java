@@ -9,27 +9,25 @@
  */
 package ua.grytsyk.device.project;
 
-/**
- * @author I.Gritsyk
- *
- */
 public class PC extends Device {
 	protected int ram;
+	final int min=10;
+	final int max=1000;
 
 	public PC(String name, int power) {
+
 		super(name, power);
+		System.out.println("Min ram is "+min+"and max ram is "+max);
 
 		// TODO Auto-generated constructor stub
 	}
 
 	public PC(String name) {
 		super(name);
+		System.out.println("Min ram is "+min+"and max ram is "+max);
 		// TODO Auto-generated constructor stub
 	}
 
-	/*
-	 * @see ua.grytsyk.device.project.Device#setPower(int)
-	 */
 	@Override
 	public PC setPower(int power) {
 		// TODO Auto-generated method stub
@@ -37,8 +35,9 @@ public class PC extends Device {
 	}
 
 	public void setRam(int ram) {
-		this.ram = ram;
-		// return this;
+		if (isRamOk(ram)) {
+			this.ram = ram;
+		} else System.out.println("Incorrect ram");
 	}
 
 	public int getRam() {
@@ -56,6 +55,12 @@ public class PC extends Device {
 			return -1;
 		} else
 			return 1;
+	}
+
+	private boolean isRamOk (int ram) {
+		if (ram<min||ram>max) return false;
+		return true;
+
 	}
 
 }
